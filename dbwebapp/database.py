@@ -2,7 +2,6 @@ import os
 
 from django.conf import settings
 
-#hello
 
 engines = {
     'sqlite': 'django.db.backends.sqlite3',
