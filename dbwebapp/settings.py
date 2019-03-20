@@ -72,19 +72,20 @@ TEMPLATES = [
 WSGI_APPLICATION = 'dbwebapp.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+from . import database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbrun',
-        'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'postgresql',
-        'PORT':'5432',
-    }
+    'default': database.config()
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'dbrun',
+#         'USER':'postgres',
+#         'PASSWORD':'postgres',
+#         'HOST':'postgresql',
+#         'PORT':'5432',
+#     }
+# }
 
 
 # Password validation
