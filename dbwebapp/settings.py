@@ -26,7 +26,7 @@ SECRET_KEY = 'cpd8#^@_l=5_%02483asd%e#u71!hq292fa)&m$ra87qx2z0kc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dbwebapp-v0-hello-world-v0.1d35.starter-us-east-1.openshiftapps.com']
+ALLOWED_HOSTS = ['helloworld-hello-world-v0.1d35.starter-us-east-1.openshiftapps.com']
 
 
 # Application definition
