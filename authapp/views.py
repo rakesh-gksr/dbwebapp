@@ -9,4 +9,5 @@ def user_token(request):
 
     """
     response = {'test env': os.getenv("TEST_ENV", 'test')}
+    print("hello")
     return Response(response, status=200)
