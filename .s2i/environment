@@ -1,20 +1,12 @@
 #!/bin/bash
-echo "hello"
-CURRENT_ENV=DEV
+function is_dev(){
+    return 1
+}
 
-if [ -z ${CURRENT_ENV+x} ]; then
-     echo "CURRENT_ENV is not defined";
+if is_dev; then
+    TEST_ENV="Below are the dev"
+    echo "dev"
 else
-    if [ $CURRENT_ENV = "PROD" ]; then
-        echo "Loading PROD configuration"
-        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
-
-    elif [ $CURRENT_ENV = "UAT" ]; then
-        echo "Loading UAT configuration"
-        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
-    else
-        echo "Loading Dev configuration"
-        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
-
-    fi
+    TEST_ENV="Below are the prod"
+    echo "prod"
 fi
