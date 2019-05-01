@@ -1,18 +1,20 @@
 #!/bin/bash
+echo "hello"
 CURRENT_ENV=DEV
+
 if [ -z ${CURRENT_ENV+x} ]; then
      echo "CURRENT_ENV is not defined";
 else
     if [ $CURRENT_ENV = "PROD" ]; then
         echo "Loading PROD configuration"
-        TEST_ENV="Below are the Prod123 ${$CURRENT_ENV}environment variables"
-        DJANGO_SECRET_KEY='9e4@&tw46$l31)zrqe3wi+-slqm(ruvz&se0^%9#6(_w3ui!c0'
-        DEBUG=False
-        DATABASE_SERVICE_NAME=sqlite
-        DATABASE_ENGINE=sqlite
-        DATABASE_PASSWORD=test123
-        SYS_TOKEN_EXPIRY_DAYS=90
-        USR_TOKEN_EXPIRY_DAYS=90
+        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
 
     elif [ $CURRENT_ENV = "UAT" ]; then
         echo "Loading UAT configuration"
+        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
+    else
+        echo "Loading Dev configuration"
+        TEST_ENV="Below are the Prod123 ${CURRENT_ENV}environment variables"
+
+    fi
+fi
