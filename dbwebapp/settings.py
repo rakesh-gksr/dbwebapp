@@ -75,18 +75,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'dbwebapp.wsgi.application'
 
 
-# from . import database
-# DATABASES = {
-#     'default': database.config()
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dbrun',
-        'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
