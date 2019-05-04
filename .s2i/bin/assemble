@@ -1,9 +1,5 @@
-#!/bin/sh
-APP_VERSION=1.0
-wget http://download.oracle.com/otn/mac/instantclient/181000/instantclient-basiclite-macos.x64-18.1.0.0.0.zip
-echo "---> testing ..."
-cmd="ls -l | grep e"
-bash -c "$cmd"
+#!/bin/bash
+
 function is_django_installed() {
   python -c "import django" &>/dev/null
 }
@@ -17,23 +13,13 @@ set -e
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
-if [ ! -x wget ]; then
-  echo "ERROR: No wget." >&2
-  exit 1
-elif [ ! -x "$apachectl" ]; then
-  echo "ERROR: No apachectl." >&2
-  exit 1
-elif [ ! -x "$tar" ]; then
-  echo "ERROR: Not in Kansas anymore, Toto." >&2
-  exit 1
-fi
-
-echo "--->hello12344555"
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
   pip install -U pip
 fi
-
+echo "---> testing ..."
+cmd="ls -l | grep e"
+bash -c "$cmd"
 
 if [[ -f requirements.txt ]]; then
   echo "---> Installing dependencies ..."
