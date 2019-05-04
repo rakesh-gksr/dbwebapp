@@ -1,5 +1,9 @@
 #!/bin/bash
-
+echo "---> testing ..."
+cmd="ls -l | grep e"
+bash -c "$cmd"
+echo "pwd-->"
+echo $PWD
 function is_django_installed() {
   python -c "import django" &>/dev/null
 }
