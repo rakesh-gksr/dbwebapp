@@ -4,6 +4,10 @@ cmd="ls -l | grep e"
 bash -c "$cmd"
 echo "pwd-->"
 echo $PWD
+if [[ -f requirements.txt ]]; then
+  echo "---> Installing dependencies1233 ..."
+
+fi
 function is_django_installed() {
   python -c "import django" &>/dev/null
 }
