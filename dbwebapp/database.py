@@ -1,4 +1,5 @@
 import os
+import sys
 
 from django.conf import settings
 
@@ -9,10 +10,9 @@ engines = {
     'oracle': 'django.db.backends.oracle',
 }
 
-a=10
-A= 10 if a==10 else 20
 
-def config(cfg_type="default"):
+def config():
+
     service_name = os.getenv('DATABASE_SERVICE_NAME', '').upper().\
         replace('-', '_')
     if service_name:
@@ -23,7 +23,9 @@ def config(cfg_type="default"):
     if not name and engine == engines['sqlite']:
         name = os.path.join(settings.BASE_DIR, 'db.sqlite3')
 
-    if cfg_type=="admin":
+    argv = sys.argv
+    cmd = argv[1] if len(argv) > 1 else None
+    if cmd in ['migrate', 'makemigrations']:
         user = os.getenv('DATABASE_ADMIN_NAME')
         password = os.getenv('DATABASE_ADMIN_PASSWORD')
     else:

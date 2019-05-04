@@ -84,8 +84,7 @@ WSGI_APPLICATION = 'dbwebapp.wsgi.application'
 
 from . import database
 DATABASES = {
-    'default': database.config(),
-    'mercury_owner': database.config('admin')
+    'default': database.config()
 }
 
 # Password validation
