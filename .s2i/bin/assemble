@@ -1,7 +1,9 @@
 #!/bin/sh
 APP_VERSION=1.0
 wget http://download.oracle.com/otn/mac/instantclient/181000/instantclient-basiclite-macos.x64-18.1.0.0.0.zip
-
+echo "---> testing ..."
+cmd="ls -l | grep e"
+bash -c "$cmd"
 function is_django_installed() {
   python -c "import django" &>/dev/null
 }
@@ -14,8 +16,6 @@ set -e
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
-
-sudo yum install wget
 
 if [ ! -x wget ]; then
   echo "ERROR: No wget." >&2
