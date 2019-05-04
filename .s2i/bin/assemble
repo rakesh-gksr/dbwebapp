@@ -42,18 +42,18 @@ if should_collectstatic; then
 
     if [[ ! -f "$manage_file" ]]; then
       echo "WARNING: seems that you're using Django, but we could not find a 'manage.py' file."
-      echo "'manage.py collectstatic' ignored."
+      #echo "'manage.py collectstatic' ignored."
       exit
     fi
 
     if ! python $manage_file collectstatic --dry-run --noinput &> /dev/null; then
       echo "WARNING: could not run 'manage.py collectstatic'. To debug, run:"
-      echo "    $ python $manage_file collectstatic --noinput"
+      #echo "    $ python $manage_file collectstatic --noinput"
       echo "Ignore this warning if you're not serving static files with Django."
       exit
     fi
 
-    python $manage_file collectstatic --noinput
+    #python $manage_file collectstatic --noinput
   )
 fi
 
