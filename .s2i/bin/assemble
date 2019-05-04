@@ -13,7 +13,7 @@ set -e
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
-yum install wget
+jboss yum install wget
 
 if [ ! -x wget ]; then
   echo "ERROR: No wget." >&2
