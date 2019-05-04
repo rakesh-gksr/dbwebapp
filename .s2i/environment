@@ -1,12 +1,8 @@
-#!/bin/bash
-function is_dev(){
-    return 0
-}
-
-if is_dev; then
-    TEST_ENV="Below are the dev"
-    echo "dev"
-else
-    TEST_ENV="Below are the prod"
-    echo "prod"
-fi
+DATABASE_SERVICE_NAME=oracle
+DATABASE_ENGINE=oracle
+DATABASE_NAME=TEST
+DATABASE_ADMIN_NAME=TEST
+DATABASE_ADMIN_PASSWORD=TEST
+DATABASE_PASSWORD=TEST
+ORACLE_SERVICE_HOST=TEST
+ORACLE_SERVICE_PORT=1825
