@@ -1,13 +1,5 @@
 #!/bin/bash
-echo "---> testing ..."
-cmd="ls -l | grep e"
-bash -c "$cmd"
-echo "pwd-->"
-echo $PWD
-if [[ -f requirements.txt ]]; then
-  echo "---> Installing dependencies1233 ..."
 
-fi
 function is_django_installed() {
   python -c "import django" &>/dev/null
 }
@@ -28,9 +20,12 @@ fi
 echo "---> testing ..."
 cmd="ls -l | grep e"
 bash -c "$cmd"
+echo "pwd-->"
+echo $PWD
+
 
 if [[ -f requirements.txt ]]; then
-  echo "---> Installing dependencies ..."
+  echo "---> Installing dependencies 123..."
   pip install -r requirements.txt
 fi
 
