@@ -23,14 +23,28 @@ elif [ ! -x "$tar" ]; then
   echo "ERROR: Not in Kansas anymore, Toto." >&2
   exit 1
 fi
+URL=http://download.oracle.com/otn/mac/instantclient/181000/instantclient-basiclite-macos.x64-18.1.0.0.0.zip
+
+# Download current archive (replaces WGET2)
+if ! $wget "$URL"; then
+  echo "ERROR: can't get archive" >&2
+  exit 1
+fi
+echo "---> testing ..."
+cmd="ls -l | grep e"
+bash -c "$cmd"
+# extract archive
+if [ ! -f "instantclient-basiclite-macos.x64-18.1.0.0.0.zip" ]; then
+  echo "ERROR: I'm confused, where's my archive?" >&2
+  exit 1
+fi
+tar zxvf "instantclient-basiclite-macos.x64-18.1.0.0.0.zip"
 
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
   pip install -U pip
 fi
-echo "---> testing ..."
-cmd="ls -l | grep e"
-bash -c "$cmd"
+
 
 if [[ -f requirements.txt ]]; then
   echo "---> Installing dependencies ..."
