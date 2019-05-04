@@ -8,6 +8,6 @@ ORACLE_SERVICE_HOST=TEST
 ORACLE_SERVICE_PORT=1825
 
 
-ORACLE_HOME=/opt/app-root/src/lib/lib/instantclient_19_3
-DYLD_LIBRARY_PATH=/opt/app-root/src/lib/lib/instantclient_19_3
-LD_LIBRARY_PATH=/opt/app-root/src/lib/lib/instantclient_19_3
+ORACLE_HOME=/opt/app-root/lib/lib/instantclient_19_3
+DYLD_LIBRARY_PATH=/opt/app-root/lib/lib/instantclient_19_3
+LD_LIBRARY_PATH=/opt/app-root/lib/lib/instantclient_19_3
