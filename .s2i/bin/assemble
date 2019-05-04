@@ -13,11 +13,9 @@ set -e
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
-wget=/usr/bin/wget
-tar=/bin/tar
-apachectl=/usr/sbin/apache2ctl
+yum install wget
 
-if [ ! -x "$wget" ]; then
+if [ ! -x wget ]; then
   echo "ERROR: No wget." >&2
   exit 1
 elif [ ! -x "$apachectl" ]; then
