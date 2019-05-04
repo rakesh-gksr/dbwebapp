@@ -13,6 +13,17 @@ set -e
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
+if [ ! -x "$wget" ]; then
+  echo "ERROR: No wget." >&2
+  exit 1
+elif [ ! -x "$apachectl" ]; then
+  echo "ERROR: No apachectl." >&2
+  exit 1
+elif [ ! -x "$tar" ]; then
+  echo "ERROR: Not in Kansas anymore, Toto." >&2
+  exit 1
+fi
+
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
   pip install -U pip
