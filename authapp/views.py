@@ -6,7 +6,7 @@ import os
 @api_view()
 def user_token(request):
     """
-
+    user token
     """
     response = {'test env': os.getenv("TEST_ENV", 'test')}
     print("hello")

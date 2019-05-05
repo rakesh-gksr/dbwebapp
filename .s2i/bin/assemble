@@ -60,6 +60,8 @@ if should_collectstatic; then
   )
 fi
 
+ln -s ${APP_HOME}/lib/instantclient_19_3/libclntsh.so.12.1 ${APP_HOME}/lib/instantclient_19_3/libclntsh.so
+
 # Fix source directory permissions
 fix-permissions ./
 # set permissions for any installed artifacts
