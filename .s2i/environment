@@ -7,9 +7,9 @@ DATABASE_PASSWORD=TEST
 ORACLE_SERVICE_HOST=TEST
 ORACLE_SERVICE_PORT=1825
 
-ORACLE_HOME="/opt/app-root/src/oracle/instantclient"
+ORACLE_HOME=/opt/app-root/src/oracle/instantclient
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
 
-OCI_HOME="/opt/app-root/src/oracle/instantclient"
-OCI_LIB_DIR="/opt/app-root/src/oracle/instantclient"
-OCI_INCLUDE_DIR="/opt/app-root/src/oracle/instantclient/sdk/include"
+OCI_HOME=/opt/app-root/src/oracle/instantclient
+OCI_LIB_DIR=/opt/app-root/src/oracle/instantclient
+OCI_INCLUDE_DIR=/opt/app-root/src/oracle/instantclient/sdk/include
