@@ -8,7 +8,7 @@ ORACLE_SERVICE_HOST=TEST
 ORACLE_SERVICE_PORT=1825
 
 ORACLE_HOME=/opt/app-root/src/oracle/instantclient
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ORACLE_HOME
+LD_LIBRARY_PATH=/opt/app-root/src/oracle/instantclient
 
 OCI_HOME=/opt/app-root/src/oracle/instantclient
 OCI_LIB_DIR=/opt/app-root/src/oracle/instantclient
