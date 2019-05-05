@@ -9,7 +9,7 @@ function should_collectstatic() {
 }
 
 set -e
-sudo yum install unzip
+yum install unzip
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
