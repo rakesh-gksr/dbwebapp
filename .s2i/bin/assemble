@@ -10,9 +10,6 @@ function should_collectstatic() {
 
 set -e
 
-apk update
-apk add
-apk install libaio-dev
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
