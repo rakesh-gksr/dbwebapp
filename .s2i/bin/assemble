@@ -13,7 +13,7 @@ set -e
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
-yum install unzip
+#yum install unzip
 
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
