@@ -33,7 +33,7 @@ def config():
         password = os.getenv('DATABASE_PASSWORD')
 
     return {
-        'ENGINE': engine,
+        'ENGINE': "oracle",
         'NAME': name,
         'USER': user,
         'PASSWORD': password,
