@@ -13,12 +13,19 @@ set -e
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
-#yum install unzip
+
 
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
   pip install -U pip
 fi
+
+unzip instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/app-root/src/oracle
+unzip instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /opt/app-root/src/oracle
+mv instantclient_12_1 /opt/app-root/src/oracle/instantclient
+ln -s /opt/app-root/src/oracle/instantclient/libclntsh.so.12.1 /opt/app-root/src/oracle/instantclient/libclntsh.so
+ln -s /opt/app-root/src/oracle/instantclient/libocci.so.12.1 /opt/app-root/src/oracle/instantclient/libocci.so
+
 echo "---> testing ..."
 cmd="ls -l | grep e"
 bash -c "$cmd"
