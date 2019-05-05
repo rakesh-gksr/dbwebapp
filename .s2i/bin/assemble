@@ -59,6 +59,8 @@ if should_collectstatic; then
     #python $manage_file collectstatic --noinput
   )
 fi
+apt-get update
+apt-get install libaio1
 
 ln -s /opt/app-root/src/lib/instantclient_19_3/libclntsh.so.12.1 /opt/app-root/src/lib/instantclient_19_3/libclntsh.so
 ln -s /opt/app-root/src/lib/instantclient_19_3/libnnz19.so /opt/app-root/src/lib/instantclient_19_3/libnnz19.so
