@@ -10,9 +10,9 @@ function should_collectstatic() {
 
 set -e
 
-apt-get update
-apt-get -y install unzip
-apt-get -y install libaio-dev
+apk update
+apk add
+apk install libaio-dev
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
