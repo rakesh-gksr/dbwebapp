@@ -33,7 +33,7 @@ def config():
         password = os.getenv('DATABASE_PASSWORD')
 
     return {
-        'ENGINE': "oracle",
+        'ENGINE': "django.db.backends.oracle",
         'NAME': name,
         'USER': user,
         'PASSWORD': password,
