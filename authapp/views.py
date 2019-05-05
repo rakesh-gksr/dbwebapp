@@ -8,6 +8,6 @@ def user_token(request):
     """
     user token
     """
-    response = {'test env': os.getenv("TEST_ENV", 'test')}
+    response = {'test env': os.getenv("LD_LIBRARY_PATH", 'test')}
     print("hello")
     return Response(response, status=200)
