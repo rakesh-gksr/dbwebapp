@@ -10,6 +10,10 @@ function should_collectstatic() {
 
 set -e
 
+apt-get update
+apt-get -y install unzip
+apt-get -y install libaio-dev
+
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
@@ -59,12 +63,6 @@ if should_collectstatic; then
     #python $manage_file collectstatic --noinput
   )
 fi
-
-dpkg-deb -R /opt/app-root/src/libaio1_0.3.110-1_amd64.deb
-
-ln -s /opt/app-root/src/lib/instantclient_19_3/libclntsh.so.12.1 /opt/app-root/src/lib/instantclient_19_3/libclntsh.so
-ln -s /opt/app-root/src/lib/instantclient_19_3/libnnz19.so /opt/app-root/src/lib/instantclient_19_3/libnnz.so
-
 
 # Fix source directory permissions
 fix-permissions ./
