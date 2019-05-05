@@ -9,10 +9,11 @@ function should_collectstatic() {
 }
 
 set -e
-yum install unzip
+
 
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
+yum install unzip
 
 if [[ ! -z "$UPGRADE_PIP_TO_LATEST" ]]; then
   echo "---> Upgrading pip to latest version ..."
