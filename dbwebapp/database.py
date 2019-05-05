@@ -31,9 +31,9 @@ def config():
     else:
         user = os.getenv('DATABASE_USER')
         password = os.getenv('DATABASE_PASSWORD')
-    #database
+
     return {
-        'ENGINE': "django.db.backends.sqlite3",
+        'ENGINE': "django.db.backends.oracle",
         'NAME': name,
         'USER': user,
         'PASSWORD': password,
