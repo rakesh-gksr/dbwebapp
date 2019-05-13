@@ -1,0 +1,6 @@
+verify_user_token:
+    url: /user_token/
+verify_system_token:
+    url: /system/verify_token/
+delete_user_token:
+  url: '/user/verify_token/?{querystring}'
